@@ -20,6 +20,10 @@ Utilisations de ce script :
  2. modifier les paramètres à la section "Paramètres réglables"
  3. modifier le script (cf licence)
 
+Exemple de résultat :
+
+.. image:: graph_tension_triphase_exemple.png
+
 Pour l'utiliser
 ---------------
 Ce script a été testé avec Python 2.6, sous Linux
