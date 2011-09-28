@@ -15,7 +15,7 @@ Domaine d'application de ce script : génie électrique
  * redresseurs en pont
  
 Utilisations de ce script :
- 1. tel quel
+ 1. tel quel (permet d'obtenir un résultat tel que `graph_tension_triphase_exemple.png`)
  2. modifier les paramètres à la section "Paramètres réglables"
  3. modifier le script (cf licence)
 
@@ -26,7 +26,6 @@ Testé sous Python 2.6
 Modules Python nécessaire :
  * numpy
  * matplotlib
-
 
 Licence
 -------
