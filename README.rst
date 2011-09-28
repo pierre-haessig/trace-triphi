@@ -22,7 +22,7 @@ Utilisations de ce script :
 
 Exemple de résultat :
 
-.. image:: graph_tension_triphase_exemple.png
+.. image:: https://github.com/pierre-haessig/trace-triphi/raw/master/graph_tension_triphase_exemple.png
 
 Pour l'utiliser
 ---------------
