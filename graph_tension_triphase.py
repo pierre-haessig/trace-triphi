@@ -196,8 +196,16 @@ ax.plot(theta,  Vab,'k--' , theta,  Vbc,'k--' , theta,  Vca,'k--',
 if tension_rectifier:
     l_r = ax.plot(theta, V_rectifier, 'k-', linewidth=2)
 ax.grid(True)
-ax.legend((l_a, l_b, l_c, l_r),
-          l_simple+[l_rectifier], loc='lower right')
+# Légende des courbes : 
+if tension_rectifier:
+   ax.legend((l_a, l_b, l_c, l_r),
+          l_simple+[l_rectifier],
+          loc='lower right')
+else:
+    ax.legend((l_a, l_b, l_c),
+          l_simple,
+          loc='lower right')
+
 # Légende des  abcisses avec les 'pi' :
 ax.set_xticks(xtick_loc)
 ax.set_xticklabels(xtick_lab)
