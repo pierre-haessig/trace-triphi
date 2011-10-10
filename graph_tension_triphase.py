@@ -49,6 +49,7 @@ V_labels = ['a', 'b', 'c'] # nom des phases
 tension_rectifier = True # activer le tracé, ou non
 #tension_rectifier = False
 psi_rectifier = 1/12 # angle d'amorçage ψ, à choisir entre 0 et 1/2
+l_rectifier = 'V red' # légende du redresseur
 
 ### Fin des réglages
 
@@ -156,7 +157,8 @@ print(u'Tracé des tensions simples %s' % ', '.join(l_simple))
 print(u'et des tensions composées %s ' % ', '.join(l_compos))
 
 if tension_rectifier:
-    print(u'et tracé de la tension redressée pour ψ = %.3fπ' % (psi_rectifier*2))
+    print(u'et tracé de la tension redressée "%s" pour ψ = %.3fπ' % 
+          (l_rectifier, psi_rectifier*2) )
 
 ###############################################
 # Tracé type 1 : bichromique
@@ -187,13 +189,15 @@ if tension_rectifier:
 ax = f.add_subplot(111,
                    title=title,
                    xlabel=u'phase θ')
+(l_a, l_b, l_c) = \
 ax.plot(theta, Va, 'b-', theta, Vb, 'g-', theta, Vc, 'r-',  linewidth=2)
 ax.plot(theta,  Vab,'k--' , theta,  Vbc,'k--' , theta,  Vca,'k--',
         theta, -Vab,'k--' , theta, -Vbc,'k--' , theta, -Vca,'k--',  linewidth=1)
 if tension_rectifier:
-    ax.plot(theta, V_rectifier, 'k-', linewidth=2)
+    l_r = ax.plot(theta, V_rectifier, 'k-', linewidth=2)
 ax.grid(True)
-ax.legend(l_simple, loc='lower right')
+ax.legend((l_a, l_b, l_c, l_r),
+          l_simple+[l_rectifier], loc='lower right')
 # Légende des  abcisses avec les 'pi' :
 ax.set_xticks(xtick_loc)
 ax.set_xticklabels(xtick_lab)
